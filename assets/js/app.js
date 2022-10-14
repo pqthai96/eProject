@@ -195,7 +195,7 @@ var myapp=angular.module("myApp",[
      };
 //wishlist
         $scope.wish=[];
-        // $cookies.putObject('wish', $scope.wish,  {'expires': expireDate});
+        $cookies.putObject('wish', $scope.wish,  {'expires': expireDate});
         $scope.wish = $cookies.getObject('wish');
         $scope.addItemtoWish=function(product){
  
