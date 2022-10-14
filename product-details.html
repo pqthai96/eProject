@@ -1,0 +1,256 @@
+
+    <!--breadcrumbs area start-->
+    <div class="breadcrumbs_area product_bread">
+        <div class="container">   
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <h3>Product Details</h3>
+                        <ul>
+                            <li><a href="#!/">home</a></li>
+                            <li>></li>
+                            <li><a href="#!shopAll">shop</a></li>
+                            <li>></li>
+                            <li>product details</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>         
+    </div>
+    <!--breadcrumbs area end-->
+    
+     <!--product details start-->
+    <div class="product_details" ng-controller="detailsCtrl">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-6 col-md-12">
+                   <div class="product-details-tab">
+
+                        <div id="img-1" ng-show="displayImg" class="col-lg-12">
+                            <figure class="zoom" style="background:url({{product_detail.img1}})" onmousemove="zoom(event)" ontouchmove="zoom(event)">
+                                <img ng-src="{{product_detail.img1}}" />
+                            </figure>
+                        </div>
+
+                        <div id="img-1" ng-hide="displayImg">
+                            <figure class="zoom" style="background:url({{product_detail.img2}})" onmousemove="zoom(event)" ontouchmove="zoom(event)">
+                                <img ng-src="{{product_detail.img2}}" />
+                            </figure>
+                        </div>
+
+                        <div class="single-zoom-thumb row">
+                            <ul class="col-md-3" id="gallery_01">
+                                <li>
+                                    <img ng-src="{{product_detail.img1}}" alt="" width="100px" height="100px" ng-click="displayImg1()">
+                                </li>
+                            </ul>
+                            <ul class="col-md-3" id="gallery_01">
+                                <li>
+                                    <img ng-src="{{product_detail.img2}}" alt="" width="100px" height="100px" ng-click="displayImg2()">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-6 col-md-12">
+                    <div class="product_d_right">
+                       <form action="#">
+                           
+                            <h1>{{product_detail.name}}</h1>
+                            <div class=" product_ratting">
+                                <ul>
+                                    <li>{{product_detail.rating}}<i class="fa fa-star"></i></li>
+                                    <li> (Customer Review)</li>
+                                </ul>
+                            </div>
+                            <div class="product_price">
+                                <span class="old_price">{{product_detail.oldprice | currency: '$':0}}</span>
+                                <span class="current_price">{{product_detail.price | currency: '$':0}}</span>
+                            </div>
+                            <span style="color:  #c09578;">{{product_detail.newPrd}}{{product_detail.sale}}</span>
+                            <div class="product_desc">
+                                <p>{{product_detail.overview}}</p>
+                            </div>
+
+                            <div class="product_variant quantity">
+                                <button class="button" type="button" ng-click="addItemToCart(product_detail)">add to cart</button>  
+                                
+                            </div>
+                            <div class=" product_d_action">
+                               <ul>
+                                    <li>+ <span style="font-weight: bold;">Categories</span>:    {{product_detail.type}}</li>
+                                    <li>+ <span style="font-weight: bold;">Type</span>: {{product_detail.stone}}</li>
+                                    <li>+ <span style="font-weight: bold;">Brand</span>:   {{product_detail.brand}}</li>
+                                    <li>+ <span style="font-weight: bold;">Color</span>:   {{product_detail.color}}</li>
+                                    <li>+ <span style="font-weight: bold;">Size</span>: {{product_detail.size}}</li>
+                               </ul>
+                            </div>
+                        </form>
+                        <div class="priduct_social">
+                            <ul>
+                                <li><a href="#" title="facebook"><i class="fa fa-facebook"></i></a></li>           
+                                <li><a href="#" title="twitter"><i class="fa fa-twitter"></i></a></li>           
+                                <li><a href="#" title="pinterest"><i class="fa fa-pinterest"></i></a></li>           
+                                <li><a href="#" title="google +"><i class="fa fa-google-plus"></i></a></li>        
+                                <li><a href="#" title="linkedin"><i class="fa fa-linkedin"></i></a></li>        
+                            </ul>      
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <!--product details end-->
+    
+    <!--product info start-->
+    <div class="product_d_info">
+        <div class="container">   
+            <div class="row">
+                <div class="col-12">
+                    <div class="product_d_inner">   
+                        <div class="product_info_button">    
+                            <ul class="nav" role="tablist">
+                                <li >
+                                    <a class="active" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Description</a>
+                                </li>
+                                <li ng-controller="reviewCtrl">
+                                   <a data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false" >Reviews({{review.length}})</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="info" role="tabpanel" >
+                                <div class="product_info_content">
+                                    <p>{{product_detail.overview}}</p>
+                                </div>    
+                            </div>
+                            <div class="tab-pane fade" id="reviews" role="tabpanel" ng-controller="reviewCtrl">
+                                <div class="reviews_wrapper">
+                                    <h2>{{review.length}} review for Donec eu furniture</h2>
+                                    <div class="reviews_comment_box" ng-repeat="rev in review">
+                                        <div class="comment_text">
+                                            <div class="reviews_meta">
+                                                <div class="star_rating">
+                                                    <ul>
+                                                        <li>{{rev.rated}}<a href="#"><i class="ion-ios-star"></i></a></li>
+                                                    </ul>   
+                                                </div>
+                                                <p><strong>{{rev.nameUse}}</strong>- 
+                                                    {{date | date}}</p>
+                                                <span>{{rev.comment}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comment_title">
+                                        <h2>Add a review </h2>
+                                        <p>Your email address will not be published.  Required fields are marked </p>
+                                    </div>
+                                        
+                                        <div class="product_review_form">
+                                            <form action="#" name="form">
+                                                <div class="product_ratting mb-10" >
+                                                    <h3>Your rating</h3>
+                                                    <div class="stars">
+                                                          <input class="star star-5" id="star-5" type="radio" name="star" value="5" ng-model="reviewUse.rated" required/>
+                                                          <label class="star star-5" for="star-5"></label>
+                                                          <input class="star star-4" id="star-4" type="radio" name="star" value="4" ng-model="reviewUse.rated" required/>
+                                                          <label class="star star-4" for="star-4"></label>
+                                                          <input class="star star-3" id="star-3" type="radio" name="star" value="3" ng-model="reviewUse.rated" required/>
+                                                          <label class="star star-3" for="star-3"></label>
+                                                          <input class="star star-2" id="star-2" type="radio" name="star" value="2" ng-model="reviewUse.rated" required/>
+                                                          <label class="star star-2" for="star-2"></label>
+                                                          <input class="star star-1" id="star-1" type="radio" name="star" value="1" ng-model="reviewUse.rated" required/>
+                                                          <label class="star star-1" for="star-1"></label>
+                                                      </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <label for="review_comment">Your review </label>
+                                                        <textarea name="comment" id="review_comment" minlength="5" maxlength="200" required ng-model="reviewUse.comment"></textarea>
+                                                        <span class="error" ng-show="form.comment.$dirty && form.comment.$error.minlength">Review must contain atleast 5 charecters</span>
+                                                        
+                                                    </div> 
+                                                    <div class="col-lg-6 col-md-6">
+                                                        <label for="author">Name</label>
+                                                        <input id="author" name="name" type="text" required ng-model="reviewUse.nameUse">
+                                                    </div> 
+                                                    <div class="col-lg-6 col-md-6">
+                                                        <label for="">Email </label>
+                                                        <input type="email"  required name="email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" ng-model="reviewUse.email">
+                                                        <span class="error" ng-show="form.email.$dirty && form.email.$error.pattern">Email not invalid</span>
+                                                    </div>  
+                                                </div>
+                                                <button type="button" ng-click="submitReview()" ng-disabled="form.$invalid">Submit</button>
+                                            </form>   
+                                        </div>
+                                    </div> 
+                                </div>    
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+            </div>
+        </div>    
+    </div>  
+    <!--product info end-->
+    
+    <!--product section area start-->
+    <section class="product_section  p_section1" ng-controller="detailsCtrl">
+        <div class="container">
+            <div class="row">
+               <div class="col-12">
+                    <div class="section_title">
+                        <h2>Related products</h2>
+                    </div> 
+                </div>  
+                <div class="col-12">
+                    <div class="product_area ">
+                         <div class="product_container bottom">
+                            <div class="custom-row product_row1">
+                                <div class="col-3 product-style" ng-repeat="related in relatedProduct | limitTo: 8">
+                                    <div class="single_product">
+                                        <div class="product_thumb">
+                                            <a class="primary_img" href="#!product-details/{{related.id}}"><img ng-src="{{related.img1}}" alt=""></a>
+                                            <a class="secondary_img" href="#!product-details/{{related.id}}"><img ng-src="{{related.img2}}" alt=""></a>
+                                        </div>
+                                        <div class="product_content">
+                                            <div class="tag_cate">
+                                                <a href="#!{{related.type}}">{{related.type}},</a>
+                                                <a href="#!{{related.stone}}">{{related.stone}}</a>
+                                            </div>
+                                            <h3><a href="#!product-details/{{related.id}}">{{related.name}}</a></h3>
+                                            <div class="price_box">
+                                                <span class="old_price">{{related.oldprice | currency : '$' :0}}</span>
+                                                <span class="current_price">{{related.price | currency : '$' :0}}</span>
+                                            </div>
+                                            <div class="product_hover">
+                                                <div class="product_ratings">
+                                                    <ul>
+                                                        <li>{{related.rating}}<a href="#!product-details/{{related.id}}"><i class="ion-ios-star"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product_desc">
+                                                    <p>{{related.overview}}</p>
+                                                    <p style="color: #c09578;">{{related.newPrd}}{{related.sale}}</p>
+                                                </div>
+                                                <div class="action_links">
+                                                    <ul>
+                                                        <li><a href="wishlist.html" data-placement="top" title="Add to Wishlist" data-toggle="tooltip"><span class="icon icon-Heart"></span></a></li>
+                                                        <li class="add_to_cart"><a href="" title="Add to cart" ng-click="addItemToCart(related)">add to cart</a></li>
+                                                        <li><a href="" title="compare"><i class="ion-ios-settings-strong" ng-click="addItemToCompare(related)"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </section>
+    <!--product section area end-->

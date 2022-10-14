@@ -1,0 +1,103 @@
+<div class="breadcrumbs_area">
+    <div class="container">   
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb_content">
+                    <ul>
+                        <li><a href="#/!">home</a></li>
+                        <li>></li>
+                        <li><a href="#!shopAll">shop</a></li>
+                        <li>></li>
+                        <li>New Products</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>         
+</div>
+<!--breadcrumbs area end-->
+
+<!--shop  area start--> 
+<div class="about_section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12">
+          <div class="about_thumb">
+            <img src="assets/img/newprds/img1.jpg" alt="" />
+          </div>
+        </div>
+        <br>
+        <div class="section_title">
+            <h2>New Arrivals</h2>
+        </div> 
+        <!--shop tab new product start-->
+        <div class="tab-content">
+            <div class="tab-pane grid_view fade show active" id="large" role="tabpanel">
+                <div class="row">
+                   <div class="col-lg-3 col-md-4 col-sm-6 product-style" ng-repeat="product in productList | paginate:currentPage:pageSize | orderBy: sortProduct | filter: txtsearch | filter: filterProduct">
+                        <div class="single_product">
+                            <div class="product_thumb">
+                                <a class="primary_img" href="#!product-details/{{product.id}}"><img ng-src="{{product.img1}}" alt=""></a>
+                                <a class="secondary_img" href="#!product-details/{{product.id}}"><img ng-src="{{product.img2}}" alt=""></a>
+                            </div>
+                            <div class="product_content">
+                                <div class="tag_cate">
+                                    <a href="#!{{product.type}}">{{product.type}},</a>
+                                    <a href="#!{{product.stone}}">{{product.stone}}</a>
+                                </div>
+                                <h3><a href="#!product-details/{{product.id}}">{{product.name}}</a></h3>
+                                <div class="price_box">
+                                    <span class="old_price">{{product.oldprice | currency: '$':0}}</span>
+                                    <span class="current_price">{{product.price | currency: '$':0}}</span>
+                                </div>
+                                <div class="product_hover">
+                                    <div class="product_ratings">
+                                        <ul>
+                                            <li>{{product.rating}}<a href="#!product-details/{{product.id}}"><i class="ion-ios-star"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product_desc">
+                                        <p>{{product.overview}}</p>
+                                        <p style="color: #c09578;">{{product.sale}}<br>{{product.newPrd}}</p>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                            <li><a href="" data-placement="top" title="Add to Wishlist" data-toggle="tooltip" ng-click="addItemtoWish(product)"><span class="icon icon-Heart"></span></a></li>
+                                            <li class="add_to_cart"><a href="" title="Add to cart" ng-click="addItemToCart(product)">add to cart</a></li>
+                                            <li><a href="compare.html" title="compare"><i class="ion-ios-settings-strong"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--shop tab new product end-->
+        <br>
+        <div class="section_title">
+            <h2>Sales for New Arrivals</h2>
+        </div> 
+        <div style="text-align:center">
+            <div class="col-12">
+                <div class="about_thumb">
+                    <img src="assets/img/newprds/img2.jpg" alt="" width="1000px" height="250px"/>
+                    <br><br>
+                    <button class="btn btn-warning" onclick="ShowVoucher()">Get E-Gift Voucher for New Arrivals</button>
+                    <br>
+                    <div id="myDIV" style="display:none"><br>
+                    Click to Copy to Clipboard
+                    <br>
+                    <button class="alert alert-primary" onclick="copyText()">NEWARRIVALS1510</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="section_title">
+            </div> 
+        </div>
+        </div>
+    </div>
+  </div>
+<!--shop toolbar end-->

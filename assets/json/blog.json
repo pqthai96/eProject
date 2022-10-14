@@ -1,0 +1,50 @@
+[
+    {
+        "id": 12,
+        "Img_blog": "assets/img/blog/chakras.png",
+        "Img_blog_same": "assets/img/blog/hands.jpg",
+        "Img": "assets/img/blog/hands.jpg",
+        "Tittle": "Crystal For Chakras",
+        "Header1": "What are chakras?",
+        "P1": "The chakras are the seven main energy centers of the body. This includes the root chakra, sacral chakra, solar plexus chakra, throat chakra, third eye chakra, and the crown chakra. These energy centers exist at the front as well as the back of the body; from the base of the spine to the top of the head. Each of the chakras is associated with a particular area of the physical body as well as its corresponding mental and emotional states of being. The word chakra means “wheel” in Sanskrit and when functioning optimally, our chakras should spin just like a wheel; allowing for an interconnected, free-flow of energy throughout our entire system. When one or more chakras is blocked or stuck, it can affect the flow of energy in our whole body and can make us feel off or out of balance.",
+        "BlockQuote": "We provide you the best quality products.",
+        "Header2": "How do chakras get blocked?",
+        "P2": " Chakras can get blocked for a variety of reasons; mostly based on our individual makeups and our day to day experiences. There are various practices which can help to open up the chakras and correct energetic imbalances within the body. These include meditation, reiki, yoga, acupuncture, and of course, crystals! Each crystal has its own unique energetic frequency based on its molecular structure, color, and shape. Depending on its particular vibration, a crystal can correspond with one or more of the body’s energy centers and when used in intentional practice can help realign each corresponding chakra."
+    },
+    {
+        "id": 22,
+        "Img_blog": "assets/img/blog/rune.png",
+        "Img_blog_same": "assets/img/blog/hands.jpg",
+        "Img": "assets/img/blog/runes101.jpg",
+        "Tittle": "Intro to Runes 101",
+        "Header1": "An Intro to Runes",
+        "P1": "Divination is the practice of gaining insight into one’s future path by connecting to the divine. This doesn’t always mean fortune-telling or trying to predict what is going to happen next. You can utilize divination practices to get in touch with your own intuitive wisdom and to receive spiritual guidance about any area of your life. These practices can inspire clarity about your course of action; what you may not be seeing in your current situation, what steps you may want to take next, and what the potential outcomes may be based on your choices. Whether you believe this higher guidance comes from deep within your own subconscious or from angels and guides outside of you, divination practices can be a really wonderful way to strengthen your spiritual connection.",
+        "BlockQuote": "",
+        "Header2": "What are runes?",
+        "P2": "Runes refer to the symbolic letters of the runic alphabet; the writing system of many ancient Germanic languages. In addition to being a form of written communication, it is believed that these symbols were also utilized for magical purposes; often as a means to receive omens and predict the future. There is a great deal of mystery around the origin of runes and from where they obtained their deeper meaning. Even the etymology of the word rune is derived from the Old Norse and Old English words for mystery and secret. Stories from Norse mythology connect the origin of runes to Odin, the god of wisdom and sorcery."
+    },
+    {
+        "id": 32,
+        "Img_blog": "assets/img/blog/rune.png",
+        "Img_blog_same": "assets/img/blog/hands.jpg",
+        "Img": "assets/img/blog/runes101.jpg",
+        "Tittle": "Intro to Runes 102",
+        "Header1": "How do you use runes?",
+        "P1": "Runes are read in a similar fashion to tarot or oracle cards. Traditionally, rune stones are cast or tossed onto a white cloth before their message is interpreted. You don’t need to use a special cloth for your stones but make sure you conduct your reading on a clean surface. When casting runes, you want to focus on a particular question or area of your life where you need clarity. You can conduct a single rune casting or utilize a variety of different spreads and layouts.",
+        "BlockQuote": "",
+        "Header2": "Ways to cast runes",
+        "P2": "If you’re doing a single rune cast, pull one rune from the pouch and lay it out in front of you. Interpret the message.   If you need a bit more insight into a situation, you’d probably want to do a more complex rune layout. Spreads can be created with as many runes as you’d like, although 3, 5, and 9 rune layouts are the most common. Decide what each rune you cast will represent in your situation. For example, if you’re doing a three rune layout, you might decide that the first rune you pull is representative of the past as it relates to your question, the second rune indicates where you are in the present, and the third rune represents what the potential future outcome may be. Another good way to do a three rune cast is to let the first rune refer to where you are currently in the situation of your inquiry. The second rune would then indicate what may be blocking or hindering you in the situation and the third rune would be a possible action you can take."
+    },
+    {
+        "id": 42,
+        "Img_blog": "assets/img/blog/goodluck.png",
+        "Img_blog_same": "assets/img/blog/hands.jpg",
+        "Img": "assets/img/blog/goodluck.jpg",
+        "Tittle": "Crystals for Good Luck",
+        "Header1": "An Intro to Crystals for Good Fortune",
+        "P1": "Being lucky means different things to different people. Some believe luck is just randomness and chance; you’re either lucky or you’re not. Others believe that you create your own luck; that in order to align with positive outcomes you have to deliberately keep your own energetic vibration high. Whatever you believe to be true about luck, we all know the general connotation of it; to be lucky means to attract good fortune, favorable situations, prosperity, and success. Luck means receiving what you want in joyful celebration; of being in the right place at the right time.",
+        "BlockQuote": "So the question becomes, how do I increase my luck? How do I experience more prosperity and success?",
+        "Header2": "",
+        "P2": "Well, in order to manifest any change, we have to be and do something different in order to experience something different. This applies to every aspect of our lives: family, career, romantic love, finances, physical health, friends and community, and more. Our manner of being – how we think, how we feel, how we act, and how we perceive ourselves and the world – has a major effect on our life circumstances. Part of conscious manifestation is remembering our innate ability to affect change in our own lives; that we can shift and activate the dormant energies within us in order to bring about our desired experiences."
+    }
+]

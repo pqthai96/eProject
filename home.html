@@ -1,0 +1,327 @@
+
+<!--slider area start-->
+<div ng-controller="sliderCtrl">
+    <div class="slider_area active">
+        <div class="single_slider" >
+            <div class="container style-img" ng-repeat="sld in slider">
+                <img ng-src="{{sld.img_slider}}" alt="" class="slider-img" id="img">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <div class="slider_content ">
+                                <p>{{sld.sale_slider}}</p>
+                                <h1>{{sld.product_slider}}</h1>
+                                <p class="slider_price">starting at <span>{{sld.price_slider | currency: '$': 0}}</span></p>
+                                <a class="button" href="#!shopAll">shopping now</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--slider area end-->
+    <!--banner area start-->
+<div ng-controller="bannerCtrl">
+    <section class="banner_section">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-4 col-md-6" ng-repeat="bn in banner">
+                <div class="single_banner">
+                    <div class="banner_thumb">
+                        <a href="#!shopAll"><img ng-src="{{bn.img_banner}}" alt=""></a>
+                        <div class="banner_content">
+                            <p>Design Creative</p>
+                            <h2>{{bn.design_banner}}</h2>
+                            <span style="color: rgb(231, 180, 84);">{{bn.sale_banner}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+    <!--banner area end-->
+
+
+
+    <!--product section area start-->
+<div ng-controller="homePrdCtrl">
+    <section class="product_section p_section1">
+    <div class="container">
+        <div class="row">   
+            <div class="col-12">
+                <div class="product_area"> 
+                    <div class="product_tab_button">
+                        <ul class="nav" role="tablist">
+                            <li>
+                                <a class="active" data-toggle="tab" href="#featured" role="tab" aria-controls="featured" aria-selected="true">Featured</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#arrivals" role="tab" aria-controls="arrivals" aria-selected="false">New Arrivals</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#onsale" role="tab" aria-controls="onsale" aria-selected="false">Onsale</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="featured" role="tabpanel">
+                                    <div class="product_container">
+                                    <div class="custom-row product_column3">
+                                        <div class="col-lg-3 col-xs-6 col-sm-6 col-md-4 product-style" ng-repeat="featured in homelist | limitTo: 8 : 5">
+                                            <div class="single_product">
+                                                <div class="product_thumb">
+                                                    <a class="primary_img" href="#!product-details/{{featured.id}}"><img ng-src="{{featured.img1}}" alt=""></a>
+                                                    <a class="secondary_img" href="#!product-details/{{featured.id}}"><img ng-src="{{featured.img2}}" alt="" ></a>
+                                                
+                                                </div>
+                                                <div class="product_content">
+                                                    <div class="tag_cate">
+                                                        <a href="#!{{featured.type}}">{{featured.type}},</a>
+                                                        <a href="#!{{featured.stone}}">{{featured.stone}}</a>
+                                                    </div>
+                                                    <h3><a href="#!product-details/{{featured.id}}">{{featured.name}}</a></h3>
+                                                    <div class="price_box">
+                                                        <span class="old_price">{{featured.oldprice | currency : '$' : 0}}</span>
+                                                        <span class="current_price">{{featured.price | currency : '$' : 0}}</span>
+                                                    </div>
+                                                    <div class="product_hover">
+                                                        <div class="product_ratings">
+                                                            <ul>
+                                                                <li>{{featured.rating}}<a href="#!product-details/{{featured.id}}"><i class="ion-ios-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="product_desc">
+                                                            <p>{{featured.overview}}</p>
+                                                            <p style="color: #c09578;">{{featured.sale}}</p>
+                                                        </div>
+                                                        <div class="action_links">
+                                                            <ul>
+                                                                <li><a href="" data-placement="top" title="Add to Wishlist" data-toggle="tooltip" ng-click="addItemtoWish(featured)"><span class="icon icon-Heart"></span></a></li>
+                                                                <li class="add_to_cart"><a href="" title="Add to cart" ng-click="addItemToCart(featured)">add to cart</a></li>
+                                                                <li><a href="" title="compare"><i class="ion-ios-settings-strong" ng-click="addItemToCompare(featured)"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="arrivals" role="tabpanel">
+                                <div class="product_container">
+                                    <div class="custom-row product_column3">
+                                        <div class="col-lg-3 col-xs-6 col-sm-6 col-md-4 product-style" ng-repeat="newArrials in homelist | filter: 'New Product': true | limitTo: 4">
+                                            <div class="single_product">
+                                                <div class="product_thumb">
+                                                    <a class="primary_img" href="#!product-details/{{newArrials.id}}"><img ng-src="{{newArrials.img1}}" alt=""></a>
+                                                    <a class="secondary_img" href="#!product-details/{{newArrials.id}}"><img ng-src="{{newArrials.img2}}" alt=""></a>
+                                                </div>
+                                                <div class="product_content">
+                                                    <div class="tag_cate">
+                                                        <a href="#!{{newArrials.type}}">{{newArrials.type}},</a>
+                                                        <a href="#!{{newArrials.stone}}">{{newArrials.stone}}</a>
+                                                    </div>
+                                                    <h3><a href="#!product-details/{{newArrials.id}}">{{newArrials.name}}</a></h3>
+                                                    <div class="price_box">
+                                                        <span class="old_price"></span>
+                                                        <span class="current_price">{{newArrials.price | currency: '$' : 0}}</span>
+                                                    </div>
+                                                    <div class="product_hover">
+                                                        <div class="product_ratings">
+                                                            <ul>
+                                                                <li>{{newArrials.rating}}<a href="#!product-details/{{newArrials.id}}"><i class="ion-ios-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="product_desc">
+                                                            <p>{{newArrials.overview}}</p>
+                                                            <p style="color: #c09578;">{{newArrials.newPrd}}</p>
+                                                        </div>
+                                                        <div class="action_links">
+                                                            <ul>
+                                                                <li><a href="" data-placement="top" title="Add to Wishlist" data-toggle="tooltip" ng-click="addItemtoWish(newArrials)"><span class="icon icon-Heart"></span></a></li>
+                                                                <li class="add_to_cart"><a href="" title="Add to cart" ng-click="addItemToCart(newArrials)">add to cart</a></li>
+                                                                <li><a href="" title="compare"><i class="ion-ios-settings-strong" ng-click="addItemToCompare(newArrials)"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div> 
+
+                            </div> 
+                            <div class="tab-pane fade" id="onsale" role="tabpanel">
+                                    <div class="product_container">
+                                    <div class="custom-row product_column3">
+                                        <div class="col-lg-3 col-xs-6 col-sm-6 col-md-4 product-style" ng-repeat="onsale in homelist | filter: 'Sale Off' : true | limitTo: 4">
+                                            <div class="single_product">
+                                                <div class="product_thumb">
+                                                    <a class="primary_img" href="#!product-details/{{onsale.id}}"><img ng-src="{{onsale.img1}}" alt=""></a>
+                                                    <a class="secondary_img" href="#!product-details/{{onsale.id}}"><img ng-src="{{onsale.img2}}" alt=""></a>
+                                                </div>
+                                                <div class="product_content">
+                                                    <div class="tag_cate">
+                                                        <a href="#!{{onsale.type}}">{{onsale.type}},</a>
+                                                        <a href="#!{{onsale.stone}}">{{onsale.stone}}</a>
+                                                    </div >
+                                                    <h3><a href="#!product-details/{{onsale.id}}">{{onsale.name}}</a></h3>
+                                                    <div class="price_box">
+                                                        <span class="old_price">{{onsale.oldprice | currency : '$' :0}}</span>
+                                                        <span class="current_price">{{onsale.price | currency : '$' :0}}</span>
+                                                    </div>
+                                                    <div class="product_hover">
+                                                        <div class="product_ratings">
+                                                            <ul>
+                                                                <li>{{onsale.rating}}<a href="#!product-details/{{onsale.id}}"><i class="ion-ios-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="product_desc">
+                                                            <p>{{onsale.overview}}</p>
+                                                            <p style="color: #c09578;">{{onsale.sale}}</p>
+                                                        </div>
+                                                        <div class="action_links">
+                                                            <ul>
+                                                                <li><a href="" data-placement="top" title="Add to Wishlist" data-toggle="tooltip" ng-click="addItemtoWish(sale)"><span class="icon icon-Heart"></span></a></li>
+                                                                <li class="add_to_cart"><a href="" title="Add to cart" ng-click="addItemToCart(onsale)">add to cart</a></li>
+                                                                <li><a href="" title="compare"><i class="ion-ios-settings-strong" ng-click="addItemToCompare(onsale)"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                    </div>
+                </div>
+
+            </div>
+        </div>    
+    </div>
+    </section>
+    <!--product section area end-->
+
+    <!--banner fullwidth start-->
+    <section class="banner_fullwidth">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12">
+                <div class="banner_text">
+                    <p>Sale Off 20% All Products</p>
+                    <h2>New Trending Collection</h2>
+                    <span>We Believe That Good Design is Always in Season</span>
+                    <a href="#!shopAll">shopping Now</a>
+                    
+                </div>
+            </div>
+        </div>   
+    </div>
+    </section>
+    <!--banner area end-->
+
+    <!--product section area start-->
+    <section class="product_section p_bottom p_section1">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section_title">
+                    <h2>Bestselling Products</h2>
+                </div>
+            </div>  
+            <div class="col-12" ng-controller="topsellCtrl">
+                <div class="product_area ">
+                        <div class="product_container bottom">
+                        <div class="custom-row ">
+                            <div class="col-lg-3 col-xs-6 col-sm-6 col-md-4 product-style" ng-repeat="top in topList |limitTo: 4:8">
+                                <div class="single_product">
+                                    <div class="product_thumb">
+                                        <a class="primary_img" href="#!product-details/{{top.id}}"><img ng-src="{{top.img1}}" alt=""></a>
+                                        <a class="secondary_img" href="#!product-details/{{top.id}}"><img ng-src="{{top.img2}}" alt=""></a>
+                                    </div>
+                                    <div class="product_content">
+                                        <div class="tag_cate">
+                                            <a href="#!{{top.type}}">{{top.type}},</a>
+                                            <a href="#!{{top.stone}}">{{top.stone}}</a>
+                                        </div>
+                                        <h3><a href="#!product-details/{{top.id}}">{{top.name}}</a></h3>
+                                        <div class="price_box">
+                                            <span class="old_price">{{top.oldprice | currency: '$' :0}}</span>
+                                            <span class="current_price">{{top.price | currency: '$' :0}}</span>
+                                        </div>
+                                        <div class="product_hover">
+                                            <div class="product_ratings">
+                                                <ul>
+                                                    <li>{{top.rating}}<a href="#!product-details/{{top.id}}"><i class="ion-ios-star"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="product_desc">
+                                                <p>{{top.overview}}</p>
+                                                <p style="color: #c09578;">{{top.sale}}</p>
+                                            </div>
+                                            <div class="action_links">
+                                                <ul>
+                                                    <li><a href="" data-placement="top" title="Add to Wishlist" data-toggle="tooltip" ng-click="addItemtoWish(top)"><span class="icon icon-Heart"></span></a></li>
+                                                    <li class="add_to_cart"><a href="" title="Add to cart" ng-click="addItemToCart(top)">add to cart</a></li>
+                                                    <li><a href="" title="compare"><i class="ion-ios-settings-strong" ng-click="addItemToCompare(top)"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    </section>
+</div>
+    <!--product section area end-->
+
+    <!--blog section area start-->
+    <section class="blog_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2>Rock Paradise News</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-controller="blogCtrl">
+                    <div class="col-lg-3 col-xs-6 col-sm-6 col-md-4" ng-repeat="blog in blogs">
+                        <div class="single_blog">
+                            <div class="blog_thumb">
+                                <a href="#!/blog/{{blog.id}}"><img ng-src="{{blog.Img_blog}}"></a>
+                            </div>
+                            <div class="blog_content">
+                                <h3><a href="#!/blog/{{blog.id}}">{{blog.Tittle}}</a></h3>
+                                <div class="author_name">
+                                    <p> 
+                                        <span>by</span>
+                                        <span class="themes">admin</span>
+                                        / 25 Sept 2022
+                                    </p>
+                                </div>
+                                <div class="post_desc">
+                                    <p>{{blog.Header1}}</p>
+                                </div>
+                                <div class="read_more">
+                                    <a href="#!/blog/{{blog.id}}">read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        </section>
+
+    <!--blog section area end-->

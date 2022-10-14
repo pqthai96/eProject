@@ -1,0 +1,61 @@
+
+    <!--breadcrumbs area start-->
+    <div class="breadcrumbs_area">
+        <div class="container">   
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <h3>Frequently Questioned Answers</h3>
+                        <ul>
+                            <li><a href="#/!">home</a></li>
+                            <li>></li>
+                            <li>Frequently Questioned Answers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>         
+    </div>
+    <!--breadcrumbs area end-->
+    
+    <!--faq area start-->
+    <div class="faq_content_area">
+        <div class="container">   
+            <div class="row">
+                <div class="col-12">
+                    <div class="faq_content_wrapper">
+                        <h4>Below are frequently asked questions, you may find the answer for yourself</h4>
+                        <p>This is the right place to solve any doubts about your jewelry. Do you have a question that is not in this FAQ? Reach us via facebook, instagram, snapchat, or write to Project-Gr4@aptech.com.</p>
+                    </div>
+                </div>
+            </div> 
+        </div>    
+    </div>
+    
+    <!--Accordion area-->
+    <div class="accordion_area" ng-controller="fqaCtrl">
+        <div class="container">
+            <div class="row"> 
+            <div class="col-12"> 
+                <div id="accordion" class="card__accordion">
+                  <div class="card card_dipult" ng-repeat="fqa in fqas">
+                    <div class="card-header card_accor" id="headingOne">
+                        <button class="btn btn-link">
+                          {{fqa.Question}}
+                        </button>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                           <p>{{fqa.Answer}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--Accordion area end-->
+    <!--faq area end-->
+    
+   

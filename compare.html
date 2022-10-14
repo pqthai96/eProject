@@ -1,0 +1,80 @@
+
+    <!--breadcrumbs area start-->
+    <div class="breadcrumbs_area">
+        <div class="container">   
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <h3>Compare</h3>
+                        <ul>
+                            <li><a href="index.html">home</a></li>
+                            <li>></li>
+                            <li>compare</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>         
+    </div>
+    <!--breadcrumbs area end-->
+    
+    <!-- main-content-wrap start -->
+    <div class="main-content-wrap compaer-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="#">
+
+                        <!-- Compare Table -->
+                        <div class="compare-table table-responsive">
+                            <table class="table ">
+                                <tbody>
+                                    <tr>
+                                        <td class="first-column">Product</td>
+                                        <td class="product-image-title" ng-repeat="com in compare">
+                                            <a href="#!product-details/{{com.id}}" class="image"><img ng-src="{{com.img1}}" alt="Compare Product"></a>
+                                            <a href="#!{{com.type}}" class="category">{{com.type}}</a>
+                                            <a href="#!product-details/{{com.id}}" class="title">{{com.name}}</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="first-column">Description</td>
+                                        <td class="pro-desc" ng-repeat="com in compare">
+                                            <p>{{com.overview}}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="first-column" >Price</td>
+                                        <td class="pro-price" ng-repeat="com in compare">{{com.price| currency: '$':0}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="first-column" >Color</td>
+                                        <td class="pro-color" ng-repeat="com in compare">{{com.color}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="first-column">Brand</td>
+                                        <td class="pro-stock" ng-repeat="com in compare">{{com.brand}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="first-column">Add to cart</td>
+                                        <td class="pro-addtocart" ng-repeat="com in compare"><a href="" class="add-to-cart" tabindex="0" ng-click="addItemToCart(com)"><span>ADD TO CART</span></a></td>
+                                    <tr>
+                                        <td class="first-column">Delete</td>
+                                        <td class="pro-remove" ng-repeat="com in compare"><button ng-click="removeItemCompare(com)"><i class="fa fa-trash-o"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="first-column">Rating</td>
+                                        <td class="pro-ratting" ng-repeat="com in compare">
+                                            <a href="#!product-details/{{com.id}}">{{com.rating}}<i class="ion-star"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main-content-wrap end -->

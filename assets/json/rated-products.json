@@ -1,0 +1,30 @@
+[
+    {
+        "id": 18,
+        "type": "Earrings",
+        "stone": "Diamonds",
+        "overview": "Truly stunning, these 14k white gold emerald cut diamond halo stud earrings are a classy addition to any jewelry collection. Weighing 0.90 carats the center emerald cut diamond is surrounded by a halo of pave set round diamonds, creating a symmetrical beauty.",
+        "name": "VINTAGE ROUND CUT DIAMOND EARRING JACKETS (0.22CT)",
+        "img1": "assets/img/diamond/ear/pd3/ear1.jpg", 
+        "img2": "assets/img/diamond/ear/pd3/ear2.jpg",
+        "img3": "assets/img/diamond/ear/pd3/ear3.jpg",
+        "brand": "Swarovski",
+        "price": 11198,
+        "sale":"Sale Off",
+        "oldprice":15990
+    },
+    {
+        "id": 104,
+        "type": "Ring",
+        "stone": "Diamonds",
+        "overview": "A total of 10 colored gemstones alternating with 13 brilliant-cut round sparkling diamonds to form this vintage style blue sapphire and diamond engagement ring with wedding band. The diamond and blue sapphire engagement ring set showcases a total of 1.80 carats.",
+        "name": "BUTTERFLY DIAMOND ENGAGEMENT RING (0.20CT)",
+        "img1": "assets/img/diamond/ring/pd4/ring1.jpg", 
+        "img2": "assets/img/diamond/ring/pd4/ring2.jpg",
+        "img3": "assets/img/diamond/ring/pd4/ring3.jpg",
+        "brand": "Tiffany",
+        "price": 22220,
+        "sale":"Sale Off",
+        "oldprice":27200
+    }
+]

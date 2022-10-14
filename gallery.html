@@ -1,0 +1,33 @@
+<!--breadcrumbs area start-->
+<div class="breadcrumbs_area">
+    <div class="container">   
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb_content">
+                    <h3>gallery</h3>
+                    <ul>
+                        <li><a href="#/!">home</a></li>
+                        <li>></li>
+                        <li>gallery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>         
+</div>
+<!--breadcrumbs area end-->
+
+<!-- gallery area start -->
+<div class="gallery_container" ng-controller="galleryCtrl">
+    <img ng-repeat="photo in gallery" class="gallery_slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index)" ng-src="{{photo.img}}"/>
+
+    <div class="controlG prev" ng-click="showPrev()"><i class="fa fa-chevron-left"></i></div>
+    <div class="controlG next" ng-click="showNext()"><i class="fa fa-chevron-right"></i></div>
+
+    <ul class="gallery_nav">
+        <li ng-repeat="photo in gallery" ng-class="{'active':isActive($index)}">
+            <img ng-src="{{photo.img}}" ng-click="showPhoto($index);" />
+        </li>
+    </ul>
+</div>
+<!-- gallery area end -->

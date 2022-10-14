@@ -1,0 +1,244 @@
+
+<div ng-controller="shopallCtrl">
+<div class="breadcrumbs_area">
+    <div class="container">   
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb_content">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="#/!">home</a></li>
+                        <li>></li>
+                        <li>shop</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>         
+</div>
+<!--breadcrumbs area end-->
+
+<!--shop  area start-->
+<div class="shop_area shop_reverse">
+    <div class="container">
+        <div class="row">
+                <div class="col-lg-3 col-md-12">
+                   <!--sidebar widget start-->
+                    <div class="sidebar_widget">
+                        <div class="widget_list widget_categories">
+                            <h2>Categories</h2>
+                            <div class="tag_widget">
+                                <ul >
+                                    <li><a href="#!Crystals">Crystals</a></li>
+                                    <li><a href="#!Jewelry">Jewelry</a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="widget_list widget_brands">
+                            <h2>Brands</h2>
+                            <form action="">
+                                
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" ng-click="pandora()" name="brand" id="">
+                                    <label class="form-check-label" for="" >Pandora</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" ng-click="swarovski()" name="brand" id="">
+                                    <label class="form-check-label" for="" > Swarovski</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" ng-click="tiffany()" name="brand" id="">
+                                    <label class="form-check-label" for="" >Tiffany</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" ng-click="full_brand()" name="brand" id="">
+                                    <label class="form-check-label" for="" > Full</label>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        
+                        <div class="widget_list compare_p">
+                            <h2>Compare Products</h2>
+                            <div class="compare_item" ng-repeat="com in compare">
+                               <div class="compare_img">
+                                   <a href="#!product-details/{{com.id}}"><img ng-src="{{com.img1}}" alt=""></a>
+                               </div>
+                                <div class="compare_info">
+                                    <h3><a href="#!product-details/{{com.id}}">{{com.name}}</a></h3>   
+                                    <div class="product_ratings">
+                                        <ul>
+                                            <li><a href="#!product-details/{{com.id}}">{{com.rating}}<i class="ion-ios-star"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="price_box">
+                                        <span class="old_price">{{com.oldprice | currency: '$':0}}</span>
+                                        <span class="current_price">{{com.price | currency: '$':0}}</span>
+                                    </div>               
+                                </div>
+                            </div>
+                            
+                            <div class="compare_btn">
+                                <a href="#!compare">compare<i class="ion-checkmark-round"></i></a>
+                            </div>
+                        </div>
+                        <div class="widget_list Featured_p">
+                            <h2>Featured Products</h2>
+                            <div class="Featured_item" ng-repeat="featured in allList | limitTo: 3:7">
+                               <div class="Featured_img">
+                                   <a href="#!product-details/{{featured.id}}"><img ng-src="{{featured.img1}}" alt=""></a>
+                               </div>
+                                <div class="Featured_info">
+                                    <h3><a href="#!product-details/{{featured.id}}">{{featured.name}}</a></h3>   
+                                    <div class="product_ratings">
+                                        <ul>
+                                            <li> {{featured.rating}}<a href="#!product-details/{{featured.id}}"><i class="ion-ios-star"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="price_box">
+                                        <span class="old_price">{{featured.oldprice |currency: '$':0}}</span>
+                                        <span class="current_price">{{featured.price |currency: '$':0}}</span>
+                                    </div>               
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--sidebar widget end-->
+                </div>
+                <div class="col-lg-9 col-md-12">
+                    <!--shop wrapper start-->
+                    <!--shop toolbar start-->
+                    <div class="shop_toolbar">
+                        <div class="list_button">
+                            <ul class="nav" role="tablist">
+                                <li>
+                                    <a class="active" data-toggle="tab" href="#large" role="tab" aria-controls="large" aria-selected="true"><i class="ion-grid"></i></a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false"><i class="ion-ios-list-outline"></i> </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="orderby_wrapper">
+                            <h3>Sort By : </h3>
+                            <div class=" niceselect_option">
+
+                                <form class="select_option" action="#">
+
+                                    <select name="orderby" id="short" class="form-select" ng-model="sortProduct">
+                                        <option  value="name">Sort by Name: A-Z</option>
+                                        <option value="-name">Sort by Name: Z-A</option>
+                                        <option  value="price">Sort by Price: Low to High</option>
+                                        <option value="-price">Sort by Price: High to Low</option>
+                                        <option value="-rating">Sort by User Rating</option>
+                                    </select>
+                                </form>
+
+
+                            </div>
+                            <div class="page_amount">
+                                <p>Showing 0-{{pageSize}} of {{allList.length}} results</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--shop toolbar end-->
+
+                    <!--shop tab product start-->
+                     <div class="tab-content">
+                        <div class="tab-pane grid_view fade show active" id="large" role="tabpanel">
+                            <div class="row">
+                               <div class="col-lg-4 col-md-4 col-sm-6" ng-repeat="product in allList | paginate:currentPage:pageSize | orderBy:sortProduct | filter: txtsearch">
+                                    <div class="single_product">
+                                        <div class="product_thumb">
+                                            <a class="primary_img" href="#!product-details/{{product.id}}"><img ng-src="{{product.img1}}" alt=""></a>
+                                            <a class="secondary_img" href="#!product-details/{{product.id}}"><img ng-src="{{product.img2}}" alt=""></a>
+                                        </div>
+                                        <div class="product_content">
+                                            <div class="tag_cate">
+                                                <a href="#!{{product.type}}">{{product.type}},</a>
+                                                <a href="#!{{product.stone}}">{{product.stone}}</a>
+                                            </div>
+                                            <h3><a href="#!product-details/{{product.id}}">{{product.name}}</a></h3>
+                                            <div class="price_box">
+                                                <span class="old_price">{{product.oldprice | currency: '$':0}}</span>
+                                                <span class="current_price">{{product.price | currency: '$':0}}</span>
+                                            </div>
+                                            <div class="product_hover">
+                                                <div class="product_ratings">
+                                                    <ul>
+                                                        <li>{{product.rating}}<a href="#!product-details/{{product.id}}"><i class="ion-ios-star"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product_desc">
+                                                    <p>{{product.overview}}</p>
+                                                    <p style="color: #c09578;">{{product.sale}}{{product.newPrd}}</p>
+                                                </div>
+                                                <div class="action_links">
+                                                    <ul>
+                                                        <li><a href="" data-placement="top" title="Add to Wishlist" data-toggle="tooltip" ng-click="addItemtoWish(product)"><span class="icon icon-Heart"></span></a></li>
+                                                        <li class="add_to_cart"><a href="" title="Add to cart" ng-click="addItemToCart(product)">add to cart</a></li>
+                                                        <li><a href="" title="compare"><i class="ion-ios-settings-strong" ng-click="addItemToCompare(product)"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="tab-pane list_view fade" id="list" role="tabpanel">
+                           <div class="single_product product_list_item" ng-repeat="product1 in allList | paginate:currentPage:pageSize | orderBy:sortProduct">
+                               <div class="row">
+                                   <div class="col-lg-4 col-md-5">
+                                       <div class="product_thumb">
+                                            <a class="primary_img" href="#!product-details/{{product1.id}}"><img ng-src="{{product1.img1}}" alt=""></a>
+                                            <a class="secondary_img" href="#!product-details/{{product1.id}}"><img ng-src="{{product1.img2}}" alt=""></a>
+                                        </div>
+                                   </div>
+                                   <div class="col-lg-8 col-md-7">
+                                        <div class="product_content">               
+                                          <h3><a href="#!product-details/{{product1.id}}">{{product1.name}}</a></h3>
+                                          <div class="product_ratings">
+                                                <ul>
+                                                    <li>{{product1.rating}}<a href="#!product-details/{{product1.id}}"><i class="ion-ios-star"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="product_desc">
+                                                <p>{{product1.overview}}</p>
+                                            </div>
+                                           <div class="price_box">
+                                                <span class="old_price">{{product1.oldprice | currency: '$':0}}</span>
+                                                <span class="current_price">{{product1.price | currency: '$':0}}</span>
+                                                <p style="color: #c09578;">{{product1.sale}}{{product1.newPrd}}</p>
+                                            </div>
+                                            
+                                            <div class="action_links">
+                                                <ul>
+                                                    <li class="add_to_cart"><a href="" title="Add to cart" ng-click="addItemToCart(product1)">add to cart</a></li>
+                                                    <li><a href="" title="Wishlist"><span class="icon icon-Heart" ng-click="addItemtoWish(product)"></span></a></li>
+                                                    
+                                                    <li><a href="" title="compare"><i class="ion-ios-settings-strong" ng-click="addItemToCompare(product)"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                   </div>
+                               </div>
+                            </div>
+                           
+                        </div>
+
+                    </div>
+                    <!--shop tab product end-->
+                    <!--shop toolbar start-->
+                    <div class="shop_toolbar t_bottom">
+                        <ul uib-pagination boundary-links="true" total-items="allList.length" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" items-per-page="pageSize"></ul>
+                    </div>
+                    <!--shop toolbar end-->
+                    <!--shop wrapper end-->
+                </div>
+            </div>    
+    </div>
+</div>
+</div>

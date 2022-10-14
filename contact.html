@@ -1,0 +1,64 @@
+<!--breadcrumbs area start-->
+<div class="breadcrumbs_area">
+    <div class="container">   
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb_content">
+                    <h3>contact</h3>
+                    <ul>
+                        <li><a href="#/!">home</a></li>
+                        <li>></li>
+                        <li>contact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>         
+</div>
+<!--breadcrumbs area end-->
+
+<!-- <div ng-controller="contactCtrl"> -->
+    <!--contact map start-->
+<div class="contact_map">
+    <div class="container">
+         <div class="row">
+             <div class="col-12">
+                <div class="map-area">
+                    <iframe id="googleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.9539790085787!2d106.69391119999999!3d10.814833900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528e962682287%3A0xb40b8ddfe7593e6!2zMjc1IE5ndXnhu4VuIFbEg24gxJDhuq11LCBQaMaw4budbmcgMTEsIELDrG5oIFRo4bqhbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaA!5e0!3m2!1svi!2s!4v1665129015677!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ <!--contact map end-->
+ 
+ <!--contact area start-->
+ <div class="contact_area" ng-controller="contactCtrl">
+     <div class="container">   
+         <div class="row" ng-repeat="cont in contact">
+             <div class="col-lg-6 col-md-12">
+                <div class="contact_message content">
+                     <h3>contact us</h3>    
+                      <p><h4>{{cont.Statement1}}</h4><br>{{cont.Service}}</p>
+                     <ul>
+                         <li><i class="fa fa-fax"></i>Address: {{cont.Address}}</li>
+                         <li><i class="fa fa-phone"></i> <a href="#">{{cont.PhoneNumbers}}</a></li>
+                         <li><i class="fa fa-envelope-o"></i> {{cont.Email}}</li>
+                     </ul>
+                 </div> 
+             </div>
+             <div class="col-lg-6 col-md-12">
+                 <div class="contact_message form">
+                      <h4 style="margin-top:100px;">{{cont.Statement2}}</h4>
+                      <p>{{cont.Booking}}</p>
+                      <h4>{{cont.Statement3}}</h4>
+                      <p>{{cont.Welcome}}</p>
+                  </div> 
+              </div>
+         </div>
+     </div>    
+ </div>
+ <!--contact area end-->
+<!-- </div> -->
+ 
