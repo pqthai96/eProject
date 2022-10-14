@@ -150,7 +150,7 @@ var myapp=angular.module("myApp",[
         //   }
         var expireDate = new Date();
         expireDate.setDate(expireDate.getDate() + 1);
-        // $cookies.putObject('cart', $scope.cart,  {'expires': expireDate});
+        $cookies.putObject('cart', $scope.cart,  {'expires': expireDate});
         $scope.cart = $cookies.getObject('cart');
         $scope.countArr=0;
     $scope.addItemToCart = function(product){
