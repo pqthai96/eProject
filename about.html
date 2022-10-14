@@ -52,6 +52,18 @@
           style="margin-left: 348px"
         />
       </div>
+      <div class="about_content">
+        <div ng-repeat="ab in aboutus">
+          <h1>contact us</h1>    
+           <p><h4>{{ab.Statement1}}</h4><br>{{ab.Service}}</p>
+          <ul>
+              <li><i class="fa fa-fax"></i>Address: {{ab.Address}}</li>
+              <li><i class="fa fa-phone"></i> <a href="#">{{ab.PhoneNumbers}}</a></li>
+              <li><i class="fa fa-envelope-o"></i> {{ab.Email}}</li>
+          </ul>
+          <hr>
+      </div> 
+      </div>
     </div>
   </div>
 </div>
