@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module("myApp.crystals",[]).controller("crystalsCtrl",function($scope,$http){
-    $http.get("../assets/json/diamond-gemstone.json").then(function(response){
+    $http.get("./assets/json/diamond-gemstone.json").then(function(response){
         $scope.productList=[];
         angular.forEach(response.data,function(product){
             if(product.type=="Crystals"){
@@ -16,7 +16,7 @@ angular.module("myApp.crystals",[]).controller("crystalsCtrl",function($scope,$h
 })
 
 angular.module("myApp.diamond",[]).controller("diamondCtrl",function($scope,$http){
-    $http.get("../assets/json/diamond-gemstone.json").then(function(response){
+    $http.get("./assets/json/diamond-gemstone.json").then(function(response){
         $scope.productList=[];
         angular.forEach(response.data,function(product){
             if(product.stone=="Diamonds"&&product.type=="Crystals"){
@@ -31,7 +31,7 @@ angular.module("myApp.diamond",[]).controller("diamondCtrl",function($scope,$htt
 })
 
 angular.module("myApp.quartz",[]).controller("quartzCtrl",function($scope,$http){
-    $http.get("../assets/json/diamond-gemstone.json").then(function(response){
+    $http.get("./assets/json/diamond-gemstone.json").then(function(response){
         $scope.productList=[];
         angular.forEach(response.data,function(product){
             if(product.stone=="Quartz"&&product.type=="Crystals"){
@@ -46,7 +46,7 @@ angular.module("myApp.quartz",[]).controller("quartzCtrl",function($scope,$http)
 })
 
 angular.module("myApp.ruby",[]).controller("rubyCtrl",function($scope,$http){
-    $http.get("../assets/json/diamond-gemstone.json").then(function(response){
+    $http.get("./assets/json/diamond-gemstone.json").then(function(response){
         $scope.productList=[];
         angular.forEach(response.data,function(product){
             if(product.stone=="Ruby"&&product.type=="Crystals"){
@@ -61,7 +61,7 @@ angular.module("myApp.ruby",[]).controller("rubyCtrl",function($scope,$http){
 })
 
 angular.module("myApp.sapphire",[]).controller("sapphireCtrl",function($scope,$http){
-    $http.get("../assets/json/diamond-gemstone.json").then(function(response){
+    $http.get("./assets/json/diamond-gemstone.json").then(function(response){
         $scope.productList=[];
         angular.forEach(response.data,function(product){
             if(product.stone=="Sapphire"&&product.type=="Crystals"){
@@ -76,7 +76,7 @@ angular.module("myApp.sapphire",[]).controller("sapphireCtrl",function($scope,$h
 })
 
 angular.module("myApp.emerald",[]).controller("emeraldCtrl",function($scope,$http){
-    $http.get("../assets/json/diamond-gemstone.json").then(function(response){
+    $http.get("./assets/json/diamond-gemstone.json").then(function(response){
         $scope.productList=[];
         angular.forEach(response.data,function(product){
             if(product.stone=="Emerald"&&product.type=="Crystals"){
@@ -91,7 +91,7 @@ angular.module("myApp.emerald",[]).controller("emeraldCtrl",function($scope,$htt
 })
 
 angular.module("myApp.jewelry",[]).controller("jewelryCtrl",function($scope,$http){
-    $http.get("../assets/json/diamond-gemstone.json").then(function(response){
+    $http.get("./assets/json/diamond-gemstone.json").then(function(response){
         $scope.productList=[];
         angular.forEach(response.data,function(product){
             if(product.categories=="Jewelry"){
@@ -106,7 +106,7 @@ angular.module("myApp.jewelry",[]).controller("jewelryCtrl",function($scope,$htt
 })
 
 angular.module("myApp.necklaces",[]).controller("necklacesCtrl",function($scope,$http){
-    $http.get("../assets/json/diamond-gemstone.json").then(function(response){
+    $http.get("./assets/json/diamond-gemstone.json").then(function(response){
         $scope.productList=[];
         angular.forEach(response.data,function(product){
             if(product.type=="Necklace"){
@@ -121,7 +121,7 @@ angular.module("myApp.necklaces",[]).controller("necklacesCtrl",function($scope,
 })
 
 angular.module("myApp.ring",[]).controller("ringCtrl",function($scope,$http){
-    $http.get("../assets/json/diamond-gemstone.json").then(function(response){
+    $http.get("./assets/json/diamond-gemstone.json").then(function(response){
         $scope.productList=[];
         angular.forEach(response.data,function(product){
             if(product.type=="Ring"){
@@ -136,7 +136,7 @@ angular.module("myApp.ring",[]).controller("ringCtrl",function($scope,$http){
 })
 
 angular.module("myApp.earrings",[]).controller("earringsCtrl",function($scope,$http){
-    $http.get("../assets/json/diamond-gemstone.json").then(function(response){
+    $http.get("./assets/json/diamond-gemstone.json").then(function(response){
         $scope.productList=[];
         angular.forEach(response.data,function(product){
             if(product.type=="Earrings"){
@@ -151,7 +151,7 @@ angular.module("myApp.earrings",[]).controller("earringsCtrl",function($scope,$h
 })
 
 angular.module("myApp.newproduct",[]).controller("newproductCtrl",function($scope,$http){
-    $http.get("../assets/json/diamond-gemstone.json").then(function(response){
+    $http.get("./assets/json/diamond-gemstone.json").then(function(response){
         $scope.productList=[];
         angular.forEach(response.data,function(product){
             if(product.newPrd=="New Product"){
@@ -166,7 +166,7 @@ angular.module("myApp.newproduct",[]).controller("newproductCtrl",function($scop
 })
 
 angular.module("myApp.saleoff",[]).controller("saleoffCtrl",function($scope,$http){
-    $http.get("../assets/json/diamond-gemstone.json").then(function(response){
+    $http.get("./assets/json/diamond-gemstone.json").then(function(response){
         $scope.productList=[];
         angular.forEach(response.data,function(product){
             if(product.sale=="Sale Off"){

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module("myApp.shopall",[]).controller("shopallCtrl",function($http,$scope,$cookies,$cookieStore){
-    $http.get("../assets/json/diamond-gemstone.json").then(function(response){
+    $http.get("./assets/json/diamond-gemstone.json").then(function(response){
         var data = response.data;
         $scope.allList=data;
 

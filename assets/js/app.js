@@ -29,7 +29,9 @@ var myapp=angular.module("myApp",[
     "myApp.navBlogDetails",
     "myApp.fqa",
     "myApp.contact",
-    "myApp.gallery"
+    "myApp.gallery",
+    "myApp.aboutus",
+    "myApp.login"
 ]);
 
      myapp.config(function($routeProvider){
@@ -104,7 +106,7 @@ var myapp=angular.module("myApp",[
                 templateUrl:"compare.html"
             })
             .when("/about",{
-                templateUrl:"about.html"
+                templateUrl:"about.html", controller:"aboutCtrl"
             })
             .when("/gallery",{
                 templateUrl:"gallery.html", controller:"galleryCtrl"
@@ -115,15 +117,18 @@ var myapp=angular.module("myApp",[
             .when("/contact",{
                 templateUrl:"contact.html", controller:"contactCtrl"
             })
+            .when("/login",{
+                templateUrl:"login.html", controller:"loginCtrl"
+            })
             .otherwise({redirectTo: "/"});
         })
 
     myapp.controller("ratedCtrl",function($http,$scope){
-        $http.get("../assets/json/rated-products.json").then(function(response){
+        $http.get("./assets/json/rated-products.json").then(function(response){
             $scope.ratedlist=response.data;
         })
     })
-    myapp.controller("mainCtrl",function($scope, $location,$cookies){
+    myapp.controller("mainCtrl",function($scope, $location,$cookies,$http){
         $scope.search="";
         $scope.submit=function(){
             $scope.search=$scope.txtsearch
@@ -261,4 +266,31 @@ var myapp=angular.module("myApp",[
             $cookies.putObject('compare', $scope.compare, {'expires': expireDate});
             $scope.compare = $cookies.getObject('compare');
         }
+        //Voucher apply
+        $scope.apply_success = false;
+        $scope.apply_failed=false;
+    $scope.apply = function () {
+        $scope.apply_success = true;
+    };
+    $scope.apply=function()
+    {
+        var voucher=coupon.voucher.value;
+        if(voucher=="NEWARRIVALS1510")
+        {
+            $scope.apply_success=true;
+        }
+        else
+        {
+            $scope.apply_failed=true;
+        }
+    }
+        //proceed
+        $http.get("./assets/json/countries.json").then(function(response){
+            $scope.countries = response.data;
+            console.log(response.data)
+        });
+    $scope.proceed=function()
+    {
+        alert("Checkout successfully! We will contact to you for your order as soon as possible.")
+    }
 });

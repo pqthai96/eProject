@@ -1,16 +1,16 @@
 [
     {
-        "img_banner":"../assets/img/bg/banner1.jpg",
+        "img_banner":"./assets/img/bg/banner1.jpg",
         "sale_banner":"From $899 – Sale 20%",
         "design_banner":"Earrings Jewelry Design"
     },
     {
-        "img_banner":"../assets/img/bg/banner2.jpg",
+        "img_banner":"./assets/img/bg/banner2.jpg",
         "sale_banner":"Only from $1090",
         "design_banner":"Necklaces Jewelry Design"
     },
     {
-        "img_banner":"../assets/img/bg/banner3.jpg",
+        "img_banner":"./assets/img/bg/banner3.jpg",
         "sale_banner":"Selling Off 30%",
         "design_banner":"Ring Jewelry Design"
     }

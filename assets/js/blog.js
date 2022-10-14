@@ -8,7 +8,7 @@ angular.module("myApp.blogDetails", []).controller("blogDetailsCtrl", [
   function ($scope, $filter, $http, $routeParams) {
     $scope.blogId = $routeParams.id;
 
-    $http.get("assets/json/blog.json").then(function (response) {
+    $http.get("./assets/json/blog.json").then(function (response) {
       var data = response.data;
       $scope.blog = $filter("filter")(
         data,
@@ -28,7 +28,7 @@ angular.module("myApp.navBlogDetails", []).controller("navBlogDetailsCtrl", [
   function ($scope, $filter, $http, $routeParams) {
     $scope.navBlogId = $routeParams.id;
 
-    $http.get("assets/json/blog.json").then(function (response) {
+    $http.get("./assets/json/blog.json").then(function (response) {
       var data = response.data;
       $scope.navbarBlogs = $filter("filter")(
         data,
@@ -41,7 +41,7 @@ angular.module("myApp.navBlogDetails", []).controller("navBlogDetailsCtrl", [
 ]);
 
 angular.module("myApp.navBlog",[]).controller("navBlogCtrl",function($scope,$http){
-  $http.get("assets/json/blog.json").then(function(response){
+  $http.get("./assets/json/blog.json").then(function(response){
       $scope.navblogs=response.data;
       console.log(response.data)
   })

@@ -4,7 +4,7 @@ angular.module("myApp.product-details",["ngCookies",]).controller("detailsCtrl",
         $scope.product_detail={}; 
         $scope.cart = [];
         $scope.total = 0;
-        $http.get("../assets/json/diamond-gemstone.json").then(function(response){
+        $http.get("./assets/json/diamond-gemstone.json").then(function(response){
             angular.forEach(response.data,function(product){
                 if(product.id==$routeParams.productid)
                 {
@@ -55,7 +55,7 @@ angular.module("myApp.product-details",["ngCookies",]).controller("detailsCtrl",
 })
 
 angular.module("myApp.product-details").controller('reviewCtrl',function($scope,$http,$cookies){
-    $http.get('../assets/json/review.json').then(function(response){
+    $http.get('./assets/json/review.json').then(function(response){
         $scope.review=response.data;
         console.log(response.data)
 

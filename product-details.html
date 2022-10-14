@@ -74,7 +74,7 @@
                             </div>
 
                             <div class="product_variant quantity">
-                                <button class="button" type="button" ng-click="addItemToCart(product_detail)">add to cart</button>  
+                                <button class="button" type="button" ng-click="addItemToCart(product_detail)"class="btn-add-to-cart">add to cart</button>  
                                 
                             </div>
                             <div class=" product_d_action">
@@ -237,8 +237,8 @@
                                                 </div>
                                                 <div class="action_links">
                                                     <ul>
-                                                        <li><a href="wishlist.html" data-placement="top" title="Add to Wishlist" data-toggle="tooltip"><span class="icon icon-Heart"></span></a></li>
-                                                        <li class="add_to_cart"><a href="" title="Add to cart" ng-click="addItemToCart(related)">add to cart</a></li>
+                                                        <li><a href="" data-placement="top" title="Add to Wishlist" data-toggle="tooltip" ng-click="addItemtoWish(related)" class="btn-add-to-wishlist"><span class="icon icon-Heart"></span></a></li>
+                                                        <li class="add_to_cart"><a href="" title="Add to cart" ng-click="addItemToCart(related)" class="btn-add-to-cart">add to cart</a></li>
                                                         <li><a href="" title="compare"><i class="ion-ios-settings-strong" ng-click="addItemToCompare(related)"></i></a></li>
                                                     </ul>
                                                 </div>

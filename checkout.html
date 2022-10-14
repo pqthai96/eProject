@@ -34,25 +34,32 @@
                         </h3>
                          <div id="checkout_login" class="collapse" data-parent="#accordion">
                             <div class="checkout_info">
-                                <p>If you have shopped with us before, please enter your details in the boxes below. If you are a new customer please proceed to the Billing & Shipping section.</p>  
-                                <form action="#">  
-                                    <div class="form_group">
-                                        <label>Username or email <span>*</span></label>
-                                        <input type="text">     
+                                <p>If you have shopped with us before, please enter your details in the boxes below. If you are a new customer please proceed to the Billing & Shipping section.</p><br>
+                                <form class="form-horizontal" name="login" novalidate ng-controller="loginCtrl">
+                                    <!--Code to validate first name is written here-->
+                                    <div class="form-group">
+                                        <label id="label" class="control-label">Username:</label>
+                                        <input type="text" class="form-control" name="usernamelogin" ng-model="user.usernamelogin" placeholder="Enter Username" autocomplete="off" required />
+                                    </div><br>
+                                    
+                                    <!--Code to validate password is written here-->
+                                    <div class="form-group">
+                                        <label id="label" class="control-label">Password:</label>
+                                        <input type="password" class="form-control" ng-model="user.passlogin" name="passlogin"
+                                            placeholder="Enter Password" required>                                
+                                    </div><br>
+                                    <!--Code to disable submit button is written here-->
+                                    
+                                    <div class="form_group group_3">                                        
+                                        <button class="" type="submit" ng-click="loginUser()" value="Submit">Login</button>
                                     </div>
-                                    <div class="form_group">
-                                        <label>Password  <span>*</span></label>
-                                        <input type="text">     
-                                    </div> 
-                                    <div class="form_group group_3 ">
-                                        <button type="submit">Login</button>
-                                        <label for="remember_box">
-                                            <input id="remember_box" type="checkbox">
-                                            <span> Remember me </span>
-                                        </label>     
+                                    <div class="alert1" ng-show="login_success">                                    
+                                        <span class="error" style="color:green">Login Successfully.&nbsp</span>                                
                                     </div>
-                                    <a href="#">Lost your password?</a>
-                                </form>          
+                                    <div class="alert1" ng-show="login_failed">
+                                        <a class="error">Incorrect username or password</a>
+                                    </div>
+                                </form>                   
                             </div>
                         </div>    
                     </div>
@@ -65,86 +72,71 @@
                         </h3>
                          <div id="checkout_coupon" class="collapse" data-parent="#accordion">
                             <div class="checkout_info">
-                                <form action="#">
-                                    <input placeholder="Coupon code" type="text">
-                                    <button type="submit">Apply coupon</button>
+                                <form name="coupon">
+                                    <input placeholder="Coupon code" type="text" name="voucher">
+                                    <button class="" type="submit" ng-click="apply()" value="Submit">Apply</button>
                                 </form>
+                                <div class="alert1" ng-show="apply_failed">                                    
+                                    <a class="error">Incorrect Code Coupon</a>
+                                </div>
+                                <div class="alert1" ng-show="apply_success">
+                                    <a style="color:green" class="error">Apply Voucher Successful</a>
+                                </div>
                             </div>
                         </div>    
                     </div>    
                </div>
             </div>
-            <div class="checkout_form">
+            <div class="checkout_form" novalidate>
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <form action="#">
+                        <form name="checkout">
                             <h3>Billing Details</h3>
                             <div class="row">
 
                                 <div class="col-lg-6 mb-20">
-                                    <label>First Name <span>*</span></label>
-                                    <input type="text">    
+                                    <label>First Name<span class="msg error" ng-show="checkout.fname.$error.required">&nbsp*</span></label>
+                                    <input type="text" name="fname" ng-model="user.fname" autocomplete="off" required>    
                                 </div>
                                 <div class="col-lg-6 mb-20">
-                                    <label>Last Name  <span>*</span></label>
-                                    <input type="text"> 
+                                    <label>Last Name <span class="msg error" ng-show="checkout.lname.$error.required">&nbsp*</span></label>
+                                    <input type="text" name="lname" ng-model="user.lname" autocomplete="off" required>    
                                 </div>
                                 <div class="col-12 mb-20">
                                     <label>Company Name</label>
-                                    <input type="text">     
+                                    <input type="text" name="cname" ng-model="user.cname" autocomplete="off">    
                                 </div>
                                 <div class="col-12 mb-20">
-                                    <label for="country">country <span>*</span></label>
-                                    <select class="niceselect_option" name="cuntry" id="country"> 
-                                        <option value="2">bangladesh</option>      
-                                        <option value="3">Algeria</option> 
-                                        <option value="4">Afghanistan</option>    
-                                        <option value="5">Ghana</option>    
-                                        <option value="6">Albania</option>    
-                                        <option value="7">Bahrain</option>    
-                                        <option value="8">Colombia</option>    
-                                        <option value="9">Dominican Republic</option>   
-
+                                    <label for="country">Country<span class="msg error" ng-show="checkout.cont.$error.required">&nbsp*</span></label>
+                                    <select class="niceselect_option" ng-model="user.country" name="cont" required>    
+                                        <option value="">-Select one-</option>
+                                        <option ng-repeat="p in countries" value="{{p.name}}">{{p.name}}</option>
                                     </select>
                                 </div>
 
                                 <div class="col-12 mb-20">
-                                    <label>Street address  <span>*</span></label>
-                                    <input placeholder="House number and street name" type="text">     
+                                    <label>Street Address<span class="msg error" ng-show="checkout.add1.$error.required">&nbsp*</span></label>
+                                    <input type="text" name="add1" ng-model="user.add1" autocomplete="off" placeholder="House number and street name/Apartment, suite, unit etc. (optional)" required>     
                                 </div>
+                               
                                 <div class="col-12 mb-20">
-                                    <input placeholder="Apartment, suite, unit etc. (optional)" type="text">     
-                                </div>
-                                <div class="col-12 mb-20">
-                                    <label>Town / City <span>*</span></label>
-                                    <input  type="text">    
+                                    <label>Town / City<span class="msg error" ng-show="checkout.city.$error.required">&nbsp*</span></label>
+                                    <input type="text" name="city" ng-model="user.city" autocomplete="off" required>    
                                 </div> 
                                  <div class="col-12 mb-20">
-                                    <label>State / County <span>*</span></label>
-                                    <input type="text">    
+                                    <label>State / County<span class="msg error" ng-show="checkout.state.$error.required">&nbsp*</span></label>
+                                    <input type="text" name="state" ng-model="user.state" autocomplete="off" required>    
                                 </div> 
                                 <div class="col-lg-6 mb-20">
-                                    <label>Phone<span>*</span></label>
-                                    <input type="text"> 
-
+                                    <label>Phone<span class="msg error" ng-show="checkout.phone.$error.required">&nbsp*</span></label>
+                                    <input type="number" name="phone" ng-model="user.phone" autocomplete="off" required>    
                                 </div> 
                                  <div class="col-lg-6 mb-20">
-                                    <label> Email Address   <span>*</span></label>
-                                      <input type="text"> 
-
+                                    <label> Email Address<span class="msg error" ng-show="checkout.email.$error.required">&nbsp*</span></label>
+                                      <input type="email" ng-model="user.email" name="email"                                    autocomplete="off" required>
+                                      <span class="msg error" ng-show="checkout.email.$dirty && checkout.email.$invalid">Email Address is not valid</span>
                                 </div> 
-                                <div class="col-12 mb-20">
-                                    <input id="account" type="checkbox" data-target="createp_account" />
-                                    <label for="account" data-toggle="collapse" data-target="#collapseOne" aria-controls="collapseOne">Create an account?</label>
-
-                                    <div id="collapseOne" class="collapse one" data-parent="#accordion">
-                                        <div class="card-body1">
-                                           <label> Account password   <span>*</span></label>
-                                            <input placeholder="password" type="password">  
-                                        </div>
-                                    </div>
-                                </div>
-                            
+                                
                                 <div class="col-12">
                                     <div class="order-notes">
                                          <label for="order_note">Order Notes</label>
@@ -184,17 +176,17 @@
                                             <th>Order Total</th>
                                             <td><strong>{{total+50|currency:'$':0}}</strong></td>
                                         </tr>
-                                        <tr class="order_total">
-                                            <th>Voucher -10%</th>
-                                            <td><strong>{{total*0.9+50|currency:'$':0}}</strong></td>
+                                        <tr class="order_total" ng-show="apply_success">
+                                            <th>Voucher -20%</th>
+                                            <td><strong>{{total*0.8+50|currency:'$':0}}</strong></td>
                                         </tr>
                                     </tfoot>
                                 </table>     
                             </div>
                             <div class="payment_method">
                                <div class="panel-default">
-                                    <input id="payment_defult" name="check_method" type="radio" data-target="createp_account" />
-                                    <label for="payment_defult" data-toggle="collapse" data-target="#collapsedefult" aria-controls="collapsedefult">PayPal <img src="assets/img/icon/papyel.png" alt=""></label>
+                                    <input id="payment_defult" name="check_method" type="radio" data-target="createp_account" required/>
+                                    <label for="payment_defult" data-toggle="collapse" data-target="#collapsedefult" aria-controls="collapsedefult">PayPal <img src="./assets/img/icon/papyel.png" alt=""></label>
 
                                     <div id="collapsedefult" class="collapse one" data-parent="#accordion">
                                         <div class="card-body1">
@@ -203,7 +195,7 @@
                                     </div>
                                 </div>
                                 <div class="order_button">
-                                    <button  type="submit">Proceed to PayPal</button> 
+                                    <button ng-disabled="checkout.$invalid" class="btn" type="submit" ng-click="proceed()">Proceed to PayPal</button> 
                                 </div>    
                             </div> 
                         </form>         

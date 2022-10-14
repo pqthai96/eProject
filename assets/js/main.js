@@ -610,7 +610,7 @@
 // Javascipt-----
 var index =1;
 changeImg=function(){
-    var img=["../assets/img/slider/sd01.jpg","../assets/img/slider/sd02.jpg","../assets/img/slider/sd03.jpg"];
+    var img=["./assets/img/slider/sd01.jpg","./assets/img/slider/sd02.jpg","./assets/img/slider/sd03.jpg"];
     document.getElementById('img').src=img[index];
     index++;
     if(index==3){
