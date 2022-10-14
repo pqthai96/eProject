@@ -17,7 +17,7 @@ eProject documentation at:
 
 ============================
 
-eProject published at:
+eProject published at: https://pqthai96.github.io/eProject/
 
 ============================
 
