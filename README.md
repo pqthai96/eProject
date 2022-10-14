@@ -13,7 +13,7 @@ Project title: Rock Paradise
             Student1387803	Lê Viết Nguyên Sơn
 ============================
 
-eProject documentation at: 
+eProject documentation at: https://github.com/pqthai96/eProject/tree/main/Review
 
 ============================
 
