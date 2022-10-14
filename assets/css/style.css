@@ -11624,7 +11624,7 @@ label.star:before {
   line-height: 1;
 }
 .compare-table .table tbody tr td.product-image-title {
-  min-width: 365px;
+  min-width: 300px;
   vertical-align: bottom;
 }
 .compare-table .table tbody tr td.product-image-title .image {
