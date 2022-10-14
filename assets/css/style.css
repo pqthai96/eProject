@@ -671,6 +671,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   text-align: center;
   border: 1px solid #5a5a5a;
   border-radius: 3px;
+  position:fixed;
 }
 @media only screen and (max-width: 767px) {
   .canvas_open a {
