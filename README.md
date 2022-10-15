@@ -21,7 +21,7 @@ eProject published at: https://pqthai96.github.io/eProject/
 
 ============================
 
-eProject video published at:
+eProject video published at: https://youtu.be/my6QbxoC6jk
 
 ============================
 
